@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import './App.css'
 
-const API_URL = 'http://139.59.23.227/api'
+// const API_URL = 'http://jobguardapi.abdulrahmanazam.me/api'
+const API_URL = 'http://localhost:8000/api'
 
 function App() {
   const [formData, setFormData] = useState({
@@ -284,10 +285,10 @@ function App() {
                     <h2 className="result-title">{prediction.is_fake ? 'Potentially Fraudulent' : 'Likely Legitimate'}</h2>
                     <p className="result-message">{prediction.message}</p>
                     
-                    {/* Confidence Level Badge */}
+                    {/* Percentage Badge */}
                     <div className="confidence-level-badge">
-                      <span className="confidence-label">Confidence Level</span>
-                      <span className="confidence-value">{prediction.confidence_level}</span>
+                      <span className="confidence-label">{prediction.is_fake ? 'Fake' : 'Real'}</span>
+                      <span className="confidence-value">{prediction.is_fake ? prediction.fraud_probability : prediction.real_probability}%</span>
                     </div>
                   </div>
                 </>  

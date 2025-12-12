@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 
-const API_URL = 'http://jobguardapi.abdulrahmanazam.me/api'
+const API_URL = 'https://jobguardapi.abdulrahmanazam.me/api'
 // const API_URL = 'http://localhost:8000/api'
 
 function App() {
